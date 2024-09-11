@@ -1,0 +1,19 @@
+<svg width="36" height="38" viewBox="0 0 36 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Comercial/Shopping">
+<g id="Icon" filter="url(#filter0_d_652_1835)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M13.0878 2.66669H22.9124C27.5632 2.66669 31.3334 6.43692 31.3334 11.0877V20.9123C31.3334 25.5631 27.5632 29.3334 22.9124 29.3334H13.0878C8.43698 29.3334 4.66675 25.5631 4.66675 20.9123V11.0877C4.66675 6.43692 8.43698 2.66669 13.0878 2.66669ZM14.146 13.8936C15.1805 14.886 16.5669 15.4266 18.0001 15.3965C20.987 15.4592 23.4609 13.0921 23.5299 10.1053C23.5299 9.52393 23.0586 9.05265 22.4773 9.05265C21.8959 9.05265 21.4246 9.52393 21.4246 10.1053C21.3486 11.9261 19.8216 13.3467 18.0001 13.2912C16.181 13.3465 14.6581 11.9239 14.5896 10.1053C14.5896 9.52393 14.1183 9.05265 13.5369 9.05265C12.9556 9.05265 12.4843 9.52393 12.4843 10.1053C12.5138 11.5385 13.1115 12.9012 14.146 13.8936Z" fill="black"/>
+</g>
+</g>
+<defs>
+<filter id="filter0_d_652_1835" x="0.666748" y="2.66669" width="34.6667" height="34.6667" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="4"/>
+<feGaussianBlur stdDeviation="2"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_652_1835"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_652_1835" result="shape"/>
+</filter>
+</defs>
+</svg>
