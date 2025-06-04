@@ -3,6 +3,7 @@ import 'package:freaking/components/custom_bottomNavigationBar_controller.dart';
 import 'package:freaking/screens/home_screen.dart';
 import 'package:freaking/screens/news_screen.dart';
 import 'package:freaking/screens/points_store_screen.dart';
+import 'package:freaking/screens/product_details_screen.dart';
 import 'package:freaking/screens/register_screen.dart';
 import '../screens/details_screen.dart';
 import '../screens/favorite_screen.dart';
@@ -21,6 +22,7 @@ class AppRoutes {
   static const String loginScreen = '/loginScreen';
   static const String customBotomNavigationBarController = '/customBotomNavigationBarController';
 
+
   /// Método estático que devuelve un mapa con las rutas de la aplicación.
   ///
   /// En este método cada entrada en el mapa asocia una ruta con la clase de la pantalla correspondiente.
@@ -33,6 +35,7 @@ class AppRoutes {
       detailsScreen: (context) => const DetailsScreen(),
       registerScreen: (context) => const RegisterScreen(),
       loginScreen: (context) => const LoginScreen(),
+     /// productDetailsScreen: (context) => ProductDetailsScreen(product: product),
       customBotomNavigationBarController: (context) => const CustomBottomNavBarController(),
     };
   }

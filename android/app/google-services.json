@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "23359221262",
+    "project_id": "freaking-76982",
+    "storage_bucket": "freaking-76982.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:23359221262:android:db56e7b5cb2f25450d165f",
+        "android_client_info": {
+          "package_name": "com.example.freaking"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "23359221262-h2tapou15fptrqba90pd26j2mto615jj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.freaking",
+            "certificate_hash": "0a967df3d20f3c51e44fc3bf439806630f55003f"
+          }
+        },
+        {
+          "client_id": "23359221262-pf8t1jmci4gigphjqfv7na676sb91cff.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDb97JJMuHGhZzOYkji4_wJO-toLT64q_g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "23359221262-pf8t1jmci4gigphjqfv7na676sb91cff.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

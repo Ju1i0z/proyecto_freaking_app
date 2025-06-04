@@ -1,3 +1,21 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    //ext.kotlin_version = '1.7.10' // Actualiza a la versión más reciente
+    ext.kotlin_version = '1.9.22'
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.1.4'
+        // O la versión de Gradle que estés utilizando
+        classpath 'com.google.gms:google-services:4.4.2' // Clase necesaria para Firebase
+        // Otras dependencias del proyecto
+        //classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.7.10"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
 allprojects {
     repositories {
         google()
@@ -5,6 +23,7 @@ allprojects {
     }
 }
 
+// Evitar duplicados en el directorio de compilación
 rootProject.buildDir = "../build"
 subprojects {
     project.buildDir = "${rootProject.buildDir}/${project.name}"
@@ -13,6 +32,9 @@ subprojects {
     project.evaluationDependsOn(":app")
 }
 
+// Tarea para limpiar la compilación
 tasks.register("clean", Delete) {
     delete rootProject.buildDir
 }
+
+

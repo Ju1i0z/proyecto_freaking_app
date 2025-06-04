@@ -1,276 +1,124 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:freaking/components/custom_text_style.dart';
 import 'package:freaking/routes/app_routes.dart';
 import 'package:freaking/colors/app_colors.dart';
 import 'package:freaking/screens/register_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'components/custom_bottomNavigationBar_controller.dart';
 import 'onboarding_screens/onboarding_view.dart';
+import 'firebase_options.dart';
 
+
+// Función principal que se ejecuta al iniciar la aplicación.
 Future<void> main() async {
+  // Método estático proporcionado por Flutter que asegura que los widgets estén inicializados antes de realizar cualquier operación.
   WidgetsFlutterBinding.ensureInitialized();
 
+  // Inicializa Firebase con un nombre personalizado y las configuraciones específicas de la plataforma.
+  await Firebase.initializeApp(
+    name: 'freaking',
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
+  // Obtención de una instancia de SharedPreferences para acceder a datos persistentes.
   final prefs = await SharedPreferences.getInstance();
+
+  // Verificación para comprobar si el usuario vió las pantallas de onboarding por primera vez y asigna `false` por defecto si no existe el valor.
   final onboarding = prefs.getBool("onboarding") ?? false;
 
-  // Verificar si hay datos de usuario guardados en shared_preferences
-  //final userId = prefs.getString('userId') ?? '';
+  // Verificación para comprobar si hay datos de usuario guardados en shared_preferences.
+  final stripeCustomerId = prefs.getString('stripeCustomerId') ?? '';
 
-  runApp(MyApp(onboarding: onboarding));
-  //runApp(MyApp(onboarding: onboarding, userId: userId));
+  // Método que ejecuta la aplicación, pasando los datos iniciales como parámetros.
+  runApp(MyApp(onboarding: onboarding, stripeCustomerId: stripeCustomerId));
 }
 
+// Clase principal de la aplicación.
 class MyApp extends StatelessWidget {
+  // Variable que indica si el usuario ya pasó por las pantallas de onboarding.
   final bool onboarding;
-  const MyApp({super.key, required this.onboarding});
+  // Variable que refleja el ID de cliente de Stripe para identificar un usuario.
+  final String stripeCustomerId;
+
+  // Constructor de la clase.
+  const MyApp({
+    super.key,
+    required this.onboarding,
+    required this.stripeCustomerId,
+  });
+
 
   @override
   Widget build(BuildContext context) {
+    // Widget que construye la estructura de la aplicación.
     return MaterialApp(
+      // Título de la aplicación.
       title: 'Freaking',
+      // Tema claro de la aplicación.
       theme: ThemeData(
-        colorScheme: const ColorScheme(
-          brightness: Brightness.light,
-          primary: AppColors.purple3, // Iconos, Botones de navegación inferior
+        fontFamily: 'Poppins', // Fuente principal.
+        colorScheme: ColorScheme.light(
+          primary: AppColors.green, // Color principal para el texto en el tema claro.
           onPrimary: AppColors.white,
-          primaryContainer: AppColors.purple2,
-          onPrimaryContainer: AppColors.white,
-          secondary: AppColors.green, // Categorías, Botón "Añadir a la cesta"
-          onSecondary: AppColors.white,
-          secondaryContainer: AppColors.green,
-          onSecondaryContainer: AppColors.white,
-          error: AppColors.red,
-          onError: AppColors.white,
-          surface: AppColors.purple1, // Fondo principal de la aplicación
-          onSurface: AppColors.black, // Títulos, Texto
-          onSurfaceVariant: AppColors.black, // Texto en tarjetas de productos
-          outline: AppColors.green, // Bordes de algunas tarjetas
-          shadow: AppColors.black,
-          inverseSurface: AppColors.black,
-          onInverseSurface: AppColors.white,
-          inversePrimary: AppColors.purple2,
+          surface: AppColors.purple1, // Color de superficies para el fondo de las pantallas principales.
+          onSurface: AppColors.purple2,
+          secondary: AppColors.black,
+          tertiary: AppColors.white,
+
         ),
-        useMaterial3: true,
+        textTheme: TextTheme(
+          headlineLarge: CustomTextStyle.blackSemiBold20WithShadow, // Estilo de texto principal.
+        ),
+        dialogTheme: DialogTheme(
+          backgroundColor: AppColors.purple1, // Fondo de diálogos
+          titleTextStyle: CustomTextStyle.greenBold20WithShadow, // Estilo del título en diálogos.
+          contentTextStyle: CustomTextStyle.greenSemiBold16WithShadow, // Estilo del contenido en diálogos.
+        ),
+        useMaterial3: true, // Activa las características de Material Design 3.
       ),
+
+      // Tema oscuro de la aplicación.
       darkTheme: ThemeData(
-        colorScheme: const ColorScheme(
-          brightness: Brightness.dark,
-          primary: AppColors.purple3, // Iconos, Botones de navegación inferior
-          onPrimary: AppColors.white,
-          primaryContainer: AppColors.purple2,
-          onPrimaryContainer: AppColors.white,
-          secondary: AppColors.green, // Categorías, Botón "Añadir a la cesta"
-          onSecondary: AppColors.white,
-          secondaryContainer: AppColors.green,
-          onSecondaryContainer: AppColors.white,
-          error: AppColors.red,
-          onError: AppColors.white,
-          surface: AppColors.black3, // Fondo principal de la aplicación
-          onSurface: AppColors.black, // Títulos, Texto
-          onSurfaceVariant: AppColors.black, // Texto en tarjetas de productos
-          outline: AppColors.green, // Bordes de algunas tarjetas
-          shadow: AppColors.black,
-          inverseSurface: AppColors.black,
-          onInverseSurface: AppColors.white,
-          inversePrimary: AppColors.purple2,
+        fontFamily: 'Poppins', // Fuente principal.
+        colorScheme: ColorScheme.dark(
+          primary: AppColors.purple3, // Color principal para el texto en el tema oscuro.
+          onPrimary: AppColors.black,
+          surface: AppColors.black3, // Color de superficies.
+          onSurface: AppColors.black3,
+          secondary: AppColors.white,
+          tertiary: AppColors.black2_5,
         ),
-        useMaterial3: true,
+        textTheme: TextTheme(
+          headlineLarge: CustomTextStyle.whiteSemiBold20WithShadow, // Estilo de texto principal.
+        ),
+        dialogTheme: DialogTheme(
+          backgroundColor: AppColors.black3, // Fondo de diálogos.
+          titleTextStyle: CustomTextStyle.purple3Bold20WithShadow, // Estilo del título en diálogos.
+          contentTextStyle: CustomTextStyle.purple3SemiBold14WithShadow, // Estilo del contenido en diálogos.
+        ),
+        useMaterial3: true, // Activa las características de Material Design 3.
       ),
+
+      // Pantalla inicial de la aplicación.
       home: _getInitialScreen(),
-      //initialRoute: AppRoutes.home,
+
+      // Define las rutas disponibles en la aplicación.
       routes: AppRoutes.getRoutes(),
     );
   }
+
+  // Determina cuál será la pantalla inicial según los datos persistentes.
   Widget _getInitialScreen() {
-    // Si hay un usuario guardado, redirige a Routes(), si no, a la pantalla de registro u onboarding
-    if (onboarding) {
+    // Si hay un usuario guardado, muestra la barra de navegación inferior.
+    if (stripeCustomerId.isNotEmpty) {
+      return const CustomBottomNavBarController();
+      // Si el usuario completó el onboarding, muestra la pantalla de registro.
+    } else if (onboarding) {
       return const RegisterScreen();
+      // Si no, muestra las pantallas de onboarding.
     } else {
       return const OnboardingView();
     }
   }
 }
-/*
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _selectedIndex = 2;
-
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
-
-  //New
-  static final List<Widget> _pages = <Widget>[
-    const SecondPage(),
-    //SvgPicture.asset('assets/svg/icon/PointsPressed.svg'),
-    SvgPicture.asset('assets/svg/icon/NewsPressed.svg'),
-    SvgPicture.asset('assets/svg/icon/HomePressed.svg'),
-    SvgPicture.asset('assets/svg/icon/FavoritePressed.svg'),
-    SvgPicture.asset('assets/svg/icon/DetailsPressed.svg'),
-  ];
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      *//*appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
-      ),*//*
-      bottomNavigationBar: BottomNavigationBar(
-        elevation: 8,
-        showUnselectedLabels: false,
-        showSelectedLabels: false,
-        type: BottomNavigationBarType.fixed,
-        backgroundColor: AppColors.black,
-        items: [
-          _buildBottomNavigationBarItem(
-            icon: 'assets/svg/icon/Points.svg',
-            activeIcon: 'assets/svg/icon/PointsPressed.svg',
-          ),
-          _buildBottomNavigationBarItem(
-            icon: 'assets/svg/icon/News.svg',
-            activeIcon: 'assets/svg/icon/NewsPressed.svg',
-          ),
-          _buildBottomNavigationBarItem(
-            icon: 'assets/svg/icon/Home.svg',
-            activeIcon: 'assets/svg/icon/HomePressed.svg',
-          ),
-          _buildBottomNavigationBarItem(
-            icon: 'assets/svg/icon/Favorite.svg',
-            activeIcon: 'assets/svg/icon/FavoritePressed.svg',
-          ),
-          _buildBottomNavigationBarItem(
-            icon: 'assets/svg/icon/Details.svg',
-            activeIcon: 'assets/svg/icon/DetailsPressed.svg',
-          ),
-        ],
-        currentIndex: _selectedIndex,
-        onTap: _onItemTapped,
-      ),
-      body: Column(
-        children: [
-          Expanded(
-            child: Stack(
-              children: [
-                Center(
-                  child: _pages.elementAt(_selectedIndex), //New
-                ),
-              Positioned(
-                left: 0,
-                right: 0,
-                bottom: -0.4,
-                child: Container(
-                  color: Colors.transparent, // Fondo transparente
-                  child: CustomPaint(
-                    painter: BottomNavBarPainter(),
-                    // Opcional: Puedes colocar cualquier widget hijo aquí si es necesario
-                  ),
-                ),
-              ),
-            ],
-        ),
-      ),
-      ],
-    ),
-    );
-  }
-}
-
-BottomNavigationBarItem _buildBottomNavigationBarItem({
-  required String icon,
-  required String activeIcon,
-}) {
-  return BottomNavigationBarItem(
-    icon: SvgPicture.asset(icon),
-    label: "",
-    activeIcon: Container(
-      width: 60,
-      height: 60,
-      decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        border: Border.all(
-          color: AppColors.purple3,
-          width: 3,
-        ),
-        color: Colors.transparent,
-        boxShadow: [
-          BoxShadow(
-            color: AppColors.purple3.withOpacity(0.25),
-            blurRadius: 8,
-            offset: const Offset(0, 4),
-          ),
-        ],
-      ),
-      child: Center(
-        child: DecoratedBox(
-          decoration: BoxDecoration(
-            boxShadow: [
-              BoxShadow(
-                color: AppColors.white.withOpacity(0.15),
-                blurRadius: 8,
-                offset: const Offset(0, 4),
-              ),
-            ],
-          ),
-          child: SvgPicture.asset(activeIcon),
-        ),
-      ),
-    ),
-  );
-}
-
-class BottomNavBarPainter extends CustomPainter {
-  @override
-  void paint(Canvas canvas, Size size) {
-    final paint = Paint()
-      ..color = Colors.black
-      ..style = PaintingStyle.fill;
-
-    final path = Path();
-    path.moveTo(0, -50);  // Adjusted to reduce the height
-    path.quadraticBezierTo(
-      size.width * 0.0, size.height * 0.2,  // Adjusted control point
-      size.width * 0.2, size.height * 0.2,  // Adjusted control point
-    );
-    path.lineTo(size.width * 0.8, size.height * 0.2);  // Adjusted control point
-    path.quadraticBezierTo(
-      size.width * 1, size.height * 0.2,  // Adjusted control point
-      size.width, -50,  // Adjusted to reduce the height
-    );
-    path.lineTo(size.width, 0);  // Adjusted height
-    path.lineTo(-50, 0);  // Adjusted height
-    path.close();
-
-    canvas.clipPath(path);
-    canvas.drawPath(path, paint);
-  }
-  @override
-  bool shouldRepaint(CustomPainter oldDelegate) => false;
-}
-
-class SecondPage extends StatelessWidget {
-  const SecondPage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Segunda Página'),
-      ),
-      body: Center(
-        child: Text('Esta es la segunda página'),
-      ),
-    );
-  }
-}*/

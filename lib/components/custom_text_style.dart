@@ -30,6 +30,340 @@ class CustomTextStyle {
     ],
   );
 
+  /// Estilo de texto con fuente "Poppins", color dinámico, grosor en negrita, tamaño 16 y sombra.
+  ///
+  /// Parámetros preestablecidos:
+  /// - `color`: Color dinámico, definido por el modo actual (oscuro o claro).
+  /// - `fontSize`: Tamaño de fuente de 16.
+  /// - `fontWeight`: Grosor de letra en negrita.
+  /// - `fontFamily`: Fuente de letra 'Poppins' (ttf añadidos previamente en la carpeta fonts).
+  /// - `sombras`: Sombra de color negro, desplazamiento de (0, 4) y radio de desenfoque de 4.
+  static TextStyle dynamicColorBold16WithShadow(BuildContext context) {
+    return TextStyle(
+    color: Theme.of(context).colorScheme.primary,
+    fontSize: 16.0,
+    fontWeight: FontWeight.bold,
+    fontFamily: 'Poppins',
+    shadows: [
+      Shadow(
+        color: Color(0x40000000),
+        offset: Offset(0, 4),
+        blurRadius: 4,
+      ),
+    ],
+    );
+  }
+
+  /// Estilo de texto con fuente "Poppins", color dinámico, grosor en negrita, tamaño 12 y sombra.
+  ///
+  /// Parámetros preestablecidos:
+  /// - `color`: Color dinámico, definido por el modo actual (oscuro o claro).
+  /// - `fontSize`: Tamaño de fuente de 12.
+  /// - `fontWeight`: Grosor de letra en negrita.
+  /// - `fontFamily`: Fuente de letra 'Poppins' (ttf añadidos previamente en la carpeta fonts).
+  /// - `sombras`: Sombra de color negro, desplazamiento de (0, 4) y radio de desenfoque de 4.
+  static TextStyle dynamicColorBold12WithShadow(BuildContext context) {
+    return TextStyle(
+      color: Theme.of(context).colorScheme.secondary,
+      fontSize: 12.0,
+      fontWeight: FontWeight.bold,
+      fontFamily: 'Poppins',
+      shadows: [
+        Shadow(
+          color: Color(0x40000000),
+          offset: Offset(0, 4),
+          blurRadius: 4,
+        ),
+      ],
+    );
+  }
+
+  /// Estilo de texto con fuente "Poppins", color dinámico, grosor en semi-negrita, tamaño 11 y sombra.
+  ///
+  /// Parámetros preestablecidos:
+  /// - `color`: Color dinámico, definido por el modo actual (oscuro o claro).
+  /// - `fontSize`: Tamaño de fuente de 11.
+  /// - `fontWeight`: Grosor de letra en semi-negrita.
+  /// - `fontFamily`: Fuente de letra 'Poppins' (ttf añadidos previamente en la carpeta fonts).
+  /// - `sombras`: Sombra de color negro, desplazamiento de (0, 4) y radio de desenfoque de 4.
+  static TextStyle dynamicColorSemiBold11WithShadow(BuildContext context) {
+    return TextStyle(
+      color: Theme.of(context).colorScheme.primary,
+      fontSize: 11.0,
+      fontWeight: FontWeight.w600,
+      fontFamily: 'Poppins',
+      shadows: [
+        Shadow(
+          color: Color(0x40000000),
+          offset: Offset(0, 4),
+          blurRadius: 4,
+        ),
+      ],
+    );
+  }
+
+  /// Estilo de texto con fuente "Poppins", color dinámico, grosor en semi-negrita, tamaño 12 y sombra.
+  ///
+  /// Parámetros preestablecidos:
+  /// - `color`: Color dinámico, definido por el modo actual (oscuro o claro).
+  /// - `fontSize`: Tamaño de fuente de 12.
+  /// - `fontWeight`: Grosor de letra en semi-negrita.
+  /// - `fontFamily`: Fuente de letra 'Poppins' (ttf añadidos previamente en la carpeta fonts).
+  /// - `sombras`: Sombra de color negro, desplazamiento de (0, 4) y radio de desenfoque de 4.
+  static TextStyle dynamicColorSemiBold12WithShadow(BuildContext context) {
+    return TextStyle(
+      color: Theme.of(context).colorScheme.secondary,
+      fontSize: 12.0,
+      fontWeight: FontWeight.w600,
+      fontFamily: 'Poppins',
+      shadows: [
+        Shadow(
+          color: Color(0x40000000),
+          offset: Offset(0, 4),
+          blurRadius: 4,
+        ),
+      ],
+    );
+  }
+
+  /// Estilo de texto con fuente "Poppins", color dinámico, grosor en semi-negrita, tamaño 20 y sombra.
+  ///
+  /// Parámetros preestablecidos:
+  /// - `color`: Color dinámico, definido por el modo actual (oscuro o claro).
+  /// - `fontSize`: Tamaño de fuente de 20.
+  /// - `fontWeight`: Grosor de letra en semi-negrita.
+  /// - `fontFamily`: Fuente de letra 'Poppins' (ttf añadidos previamente en la carpeta fonts).
+  /// - `sombras`: Sombra de color negro, desplazamiento de (0, 4) y radio de desenfoque de 4.
+  static TextStyle dynamicColorSemiBold20WithShadow(BuildContext context) {
+    return TextStyle(
+      color: Theme.of(context).colorScheme.secondary,
+      fontSize: 20.0,
+      fontWeight: FontWeight.w600,
+      fontFamily: 'Poppins',
+      shadows: [
+        Shadow(
+          color: Color(0x40000000),
+          offset: Offset(0, 4),
+          blurRadius: 4,
+        ),
+      ],
+    );
+  }
+
+  /// Estilo de texto con fuente "Poppins", color dinámico, grosor en semi-negrita, tamaño 20 y sombra.
+  ///
+  /// Parámetros preestablecidos:
+  /// - `color`: Color dinámico, definido por el modo actual (oscuro o claro).
+  /// - `fontSize`: Tamaño de fuente de 20.
+  /// - `fontWeight`: Grosor de letra en semi-negrita.
+  /// - `fontFamily`: Fuente de letra 'Poppins' (ttf añadidos previamente en la carpeta fonts).
+  /// - `sombras`: Sombra de color negro, desplazamiento de (0, 4) y radio de desenfoque de 4.
+  static TextStyle dynamicColorSemiBold20WithShadow2(BuildContext context) {
+    return TextStyle(
+      color: Theme.of(context).colorScheme.primary,
+      fontSize: 20.0,
+      fontWeight: FontWeight.w600,
+      fontFamily: 'Poppins',
+      shadows: [
+        Shadow(
+          color: Color(0x40000000),
+          offset: Offset(0, 4),
+          blurRadius: 4,
+        ),
+      ],
+    );
+  }
+
+  /// Estilo de texto con fuente "Poppins", color dinámico, grosor en semi-negrita, tamaño 18 y sombra.
+  ///
+  /// Parámetros preestablecidos:
+  /// - `color`: Color dinámico, definido por el modo actual (oscuro o claro).
+  /// - `fontSize`: Tamaño de fuente de 18.
+  /// - `fontWeight`: Grosor de letra en semi-negrita.
+  /// - `fontFamily`: Fuente de letra 'Poppins' (ttf añadidos previamente en la carpeta fonts).
+  /// - `sombras`: Sombra de color negro, desplazamiento de (0, 4) y radio de desenfoque de 4.
+  static TextStyle dynamicColorSemiBold18WithShadow(BuildContext context) {
+    return TextStyle(
+      color: Theme.of(context).colorScheme.secondary,
+      fontSize: 18.0,
+      fontWeight: FontWeight.w600,
+      fontFamily: 'Poppins',
+      shadows: [
+        Shadow(
+          color: Color(0x40000000),
+          offset: Offset(0, 4),
+          blurRadius: 4,
+        ),
+      ],
+    );
+  }
+
+  /// Estilo de texto con fuente "Poppins", color dinámico, grosor en semi-negrita, tamaño 16 y sombra.
+  ///
+  /// Parámetros preestablecidos:
+  /// - `color`: Color dinámico, definido por el modo actual (oscuro o claro).
+  /// - `fontSize`: Tamaño de fuente de 16.
+  /// - `fontWeight`: Grosor de letra en semi-negrita.
+  /// - `fontFamily`: Fuente de letra 'Poppins' (ttf añadidos previamente en la carpeta fonts).
+  /// - `sombras`: Sombra de color negro, desplazamiento de (0, 4) y radio de desenfoque de 4.
+  static TextStyle dynamicColorSemiBold16WithShadow(BuildContext context) {
+    return TextStyle(
+      color: Theme.of(context).colorScheme.primary,
+      fontSize: 16.0,
+      fontWeight: FontWeight.w600,
+      fontFamily: 'Poppins',
+      shadows: [
+        Shadow(
+          color: Color(0x40000000),
+          offset: Offset(0, 4),
+          blurRadius: 4,
+        ),
+      ],
+    );
+  }
+
+  /// Estilo de texto con fuente "Poppins", color dinámico, grosor en semi-negrita, tamaño 16 y sombra.
+  ///
+  /// Parámetros preestablecidos:
+  /// - `color`: Color dinámico, definido por el modo actual (oscuro o claro).
+  /// - `fontSize`: Tamaño de fuente de 16.
+  /// - `fontWeight`: Grosor de letra en semi-negrita.
+  /// - `fontFamily`: Fuente de letra 'Poppins' (ttf añadidos previamente en la carpeta fonts).
+  /// - `sombras`: Sombra de color negro, desplazamiento de (0, 4) y radio de desenfoque de 4.
+  static TextStyle dynamicColorSemiBold16WithShadow2(BuildContext context) {
+    return TextStyle(
+      color: Theme.of(context).colorScheme.secondary,
+      fontSize: 16.0,
+      fontWeight: FontWeight.w600,
+      fontFamily: 'Poppins',
+      shadows: [
+        Shadow(
+          color: Color(0x40000000),
+          offset: Offset(0, 4),
+          blurRadius: 4,
+        ),
+      ],
+    );
+  }
+
+  /// Estilo de texto con fuente "Poppins", color dinámico, grosor en semi-negrita, tamaño 15 y sombra.
+  ///
+  /// Parámetros preestablecidos:
+  /// - `color`: Color dinámico, definido por el modo actual (oscuro o claro).
+  /// - `fontSize`: Tamaño de fuente de 15.
+  /// - `fontWeight`: Grosor de letra en negrita.
+  /// - `fontFamily`: Fuente de letra 'Poppins' (ttf añadidos previamente en la carpeta fonts).
+  /// - `sombras`: Sombra de color negro, desplazamiento de (0, 4) y radio de desenfoque de 4.
+  static TextStyle dynamicColorSemiBold15WithShadow(BuildContext context) {
+    return TextStyle(
+      color: Theme.of(context).colorScheme.primary,
+      fontSize: 15.0,
+      fontWeight: FontWeight.w600,
+      fontFamily: 'Poppins',
+      shadows: [
+        Shadow(
+          color: Color(0x40000000),
+          offset: Offset(0, 4),
+          blurRadius: 4,
+        ),
+      ],
+    );
+  }
+
+  /// Estilo de texto con fuente "Poppins", color dinámico, grosor en negrita, tamaño 14 y sombra.
+  ///
+  /// Parámetros preestablecidos:
+  /// - `color`: Color dinámico, definido por el modo actual (oscuro o claro).
+  /// - `fontSize`: Tamaño de fuente de 14.
+  /// - `fontWeight`: Grosor de letra en negrita.
+  /// - `fontFamily`: Fuente de letra 'Poppins' (ttf añadidos previamente en la carpeta fonts).
+  /// - `sombras`: Sombra de color negro, desplazamiento de (0, 4) y radio de desenfoque de 4.
+  static TextStyle dynamicColorBold14WithShadow(BuildContext context) {
+    return TextStyle(
+      color: Theme.of(context).colorScheme.primary,
+      fontSize: 14.0,
+      fontWeight: FontWeight.bold,
+      fontFamily: 'Poppins',
+      shadows: [
+        Shadow(
+          color: Color(0x40000000),
+          offset: Offset(0, 4),
+          blurRadius: 4,
+        ),
+      ],
+    );
+  }
+
+  /// Estilo de texto con fuente "Poppins", color dinámico, grosor en negrita, tamaño 20 y sombra.
+  ///
+  /// Parámetros preestablecidos:
+  /// - `color`: Color dinámico, definido por el modo actual (oscuro o claro).
+  /// - `fontSize`: Tamaño de fuente de 20.
+  /// - `fontWeight`: Grosor de letra en negrita.
+  /// - `fontFamily`: Fuente de letra 'Poppins' (ttf añadidos previamente en la carpeta fonts).
+  /// - `sombras`: Sombra de color negro, desplazamiento de (0, 4) y radio de desenfoque de 4.
+  static TextStyle dynamicColorBold20WithShadow(BuildContext context) {
+    return TextStyle(
+      color: Theme.of(context).colorScheme.secondary,
+      fontSize: 20.0,
+      fontWeight: FontWeight.bold,
+      fontFamily: 'Poppins',
+      shadows: [
+        Shadow(
+          color: Color(0x40000000),
+          offset: Offset(0, 4),
+          blurRadius: 4,
+        ),
+      ],
+    );
+  }
+
+  /// Estilo de texto con fuente "Poppins", color dinámico, grosor en negrita, tamaño 18 y sombra.
+  ///
+  /// Parámetros preestablecidos:
+  /// - `color`: Color dinámico, definido por el modo actual (oscuro o claro).
+  /// - `fontSize`: Tamaño de fuente de 18.
+  /// - `fontWeight`: Grosor de letra en negrita.
+  /// - `fontFamily`: Fuente de letra 'Poppins' (ttf añadidos previamente en la carpeta fonts).
+  /// - `sombras`: Sombra de color negro, desplazamiento de (0, 4) y radio de desenfoque de 4.
+  static TextStyle dynamicColorBold18WithShadow(BuildContext context) {
+    return TextStyle(
+      color: Theme.of(context).colorScheme.primary,
+      fontSize: 18.0,
+      fontWeight: FontWeight.bold,
+      fontFamily: 'Poppins',
+      shadows: [
+        Shadow(
+          color: Color(0x40000000),
+          offset: Offset(0, 4),
+          blurRadius: 4,
+        ),
+      ],
+    );
+  }
+
+  /// Estilo de texto con fuente "Poppins", color morado, grosor en negrita, tamaño 16 y sombra.
+  ///
+  /// Parámetros preestablecidos:
+  /// - `color`: Color morado, definido en la clase AppColors.
+  /// - `fontSize`: Tamaño de fuente de 16.
+  /// - `fontWeight`: Grosor de letra en negrita.
+  /// - `fontFamily`: Fuente de letra 'Poppins' (ttf añadidos previamente en la carpeta fonts).
+  /// - `sombras`: Sombra de color negro, desplazamiento de (0, 4) y radio de desenfoque de 4.
+  static const TextStyle purple3Bold16WithShadow = TextStyle(
+    color: AppColors.purple3,
+    fontSize: 16.0,
+    fontWeight: FontWeight.bold,
+    fontFamily: 'Poppins',
+    shadows: [
+      Shadow(
+        color: Color(0x40000000),
+        offset: Offset(0, 4),
+        blurRadius: 4,
+      ),
+    ],
+  );
+
   /// Estilo de texto con fuente "Poppins", color verde, grosor en semi-negrita, tamaño 14 y sombra.
   ///
   /// Parámetros preestablecidos:
@@ -50,6 +384,123 @@ class CustomTextStyle {
         blurRadius: 4,
       ),
     ],
+  );
+
+  /// Estilo de texto con fuente "Poppins", color dinámico (oscuro o claro), grosor en semi-negrita, tamaño 14 y sombra.
+  ///
+  /// Parámetros preestablecidos:
+  /// - `color`: Color dinámico, definido por el modo (oscuro o claro).
+  /// - `fontSize`: Tamaño de fuente de 14.
+  /// - `fontWeight`: Grosor de letra en semi-negrita.
+  /// - `fontFamily`: Fuente de letra 'Poppins' (ttf añadidos previamente en la carpeta fonts).
+  /// - `sombras`: Sombra de color negro, desplazamiento de (0, 4) y radio de desenfoque de 4.
+  static TextStyle dynamicColorSemiBold14WithShadow(BuildContext context) {
+    return TextStyle(
+      color: Theme.of(context).colorScheme.primary,
+      fontSize: 14.0,
+      fontWeight: FontWeight.w600,
+      fontFamily: 'Poppins',
+      shadows: [
+        Shadow(
+          color: Color(0x40000000),
+          offset: Offset(0, 4),
+          blurRadius: 4,
+        ),
+      ],
+    );
+  }
+
+  /// Estilo de texto con fuente "Poppins", color dinámico (oscuro o claro), grosor en semi-negrita, tamaño 14 y sombra.
+  ///
+  /// Parámetros preestablecidos:
+  /// - `color`: Color dinámico, definido por el modo (oscuro o claro).
+  /// - `fontSize`: Tamaño de fuente de 14.
+  /// - `fontWeight`: Grosor de letra en semi-negrita.
+  /// - `fontFamily`: Fuente de letra 'Poppins' (ttf añadidos previamente en la carpeta fonts).
+  /// - `sombras`: Sombra de color negro, desplazamiento de (0, 4) y radio de desenfoque de 4.
+  static TextStyle dynamicColorSemiBold14WithShadow2(BuildContext context) {
+    return TextStyle(
+      color: Theme.of(context).colorScheme.secondary,
+      fontSize: 14.0,
+      fontWeight: FontWeight.w600,
+      fontFamily: 'Poppins',
+      shadows: [
+        Shadow(
+          color: Color(0x40000000),
+          offset: Offset(0, 4),
+          blurRadius: 4,
+        ),
+      ],
+    );
+  }
+
+  /// Estilo de texto con fuente "Poppins", color dinámico (oscuro o claro), grosor en semi-negrita, tamaño 14 y sombra.
+  ///
+  /// Parámetros preestablecidos:
+  /// - `color`: Color dinámico, definido por el modo (oscuro o claro).
+  /// - `fontSize`: Tamaño de fuente de 14.
+  /// - `fontWeight`: Grosor de letra en semi-negrita.
+  /// - `fontFamily`: Fuente de letra 'Poppins' (ttf añadidos previamente en la carpeta fonts).
+  /// - `sombras`: Sombra de color negro, desplazamiento de (0, 4) y radio de desenfoque de 4.
+  static TextStyle dynamicColorSemiBold14WithShadowFilterHT(BuildContext context) {
+    return TextStyle(
+      color: Theme.of(context).colorScheme.secondary,
+      fontSize: 14.0,
+      fontWeight: FontWeight.w600,
+      fontFamily: 'Poppins',
+      shadows: [
+        Shadow(
+          color: Color(0x40000000),
+          offset: Offset(0, 4),
+          blurRadius: 4,
+        ),
+      ],
+    );
+  }
+
+  /// Estilo de texto con fuente "Poppins", color morado, grosor en semi-negrita, tamaño 14 y sombra.
+  ///
+  /// Parámetros preestablecidos:
+  /// - `color`: Color morado, definido en la clase AppColors.
+  /// - `fontSize`: Tamaño de fuente de 14.
+  /// - `fontWeight`: Grosor de letra en semi-negrita.
+  /// - `fontFamily`: Fuente de letra 'Poppins' (ttf añadidos previamente en la carpeta fonts).
+  /// - `sombras`: Sombra de color negro, desplazamiento de (0, 4) y radio de desenfoque de 4.
+  static const TextStyle purple3SemiBold14WithShadow  = TextStyle(
+    color: AppColors.purple3,
+    fontSize: 14.0,
+    fontWeight: FontWeight.w600,
+    fontFamily: 'Poppins',
+    shadows: [
+      Shadow(
+        color: Color(0x40000000),
+        offset: Offset(0, 4),
+        blurRadius: 4,
+      ),
+    ],
+  );
+
+  /// Estilo de texto con fuente "Poppins", color rojo, grosor en semi-negrita, tamaño 10 y sombra.
+  ///
+  /// Parámetros preestablecidos:
+  /// - `color`: Color rojo, definido en la clase AppColors.
+  /// - `fontSize`: Tamaño de fuente de 10.
+  /// - `fontWeight`: Grosor de letra en semi-negrita.
+  /// - `fontFamily`: Fuente de letra 'Poppins' (ttf añadidos previamente en la carpeta fonts).
+  /// - `shadows`: Sombra de color negro, desplazamiento de (0, 4) y radio de desenfoque de 4.
+  /// PARA EL ERROR DE VALIDACIÓN DE LOS FORMULARIOS DE REGISTRO E INICIO DE SESIÓN.
+  static const TextStyle redSemiBold10  = TextStyle(
+    color: AppColors.red,
+    fontSize: 10.0,
+    fontWeight: FontWeight.w600,
+    fontFamily: 'Poppins',
+/*    shadows: [
+      Shadow(
+        color: Color(0x40000000),
+        offset: Offset(0, 4),
+        blurRadius: 4,
+      ),
+    ],*/
   );
 
   /// Estilo de texto con fuente "Poppins", color verde, grosor en semi-negrita, tamaño 11 y sombra.
@@ -118,6 +569,28 @@ class CustomTextStyle {
     ],
   );
 
+  /// Estilo de texto con fuente "Poppins", color morado, grosor en semi-negrita, tamaño 16 y sombra.
+  ///
+  /// Parámetros preestablecidos:
+  /// - `color`: Color morado, definido en la clase AppColors.
+  /// - `fontSize`: Tamaño de fuente de 16.
+  /// - `fontWeight`: Grosor de letra en semi-negrita.
+  /// - `fontFamily`: Fuente de letra 'Poppins' (ttf añadidos previamente en la carpeta fonts).
+  /// - `sombras`: Sombra de color negro, desplazamiento de (0, 4) y radio de desenfoque de 4.
+  static const TextStyle purple3SemiBold16WithShadow = TextStyle(
+    color: AppColors.purple3,
+    fontSize: 16.0,
+    fontWeight: FontWeight.w600,
+    fontFamily: 'Poppins',
+    shadows: [
+      Shadow(
+        color: Color(0x40000000),
+        offset: Offset(0, 4),
+        blurRadius: 4,
+      ),
+    ],
+  );
+
   /// Estilo de texto con fuente "Poppins", color verde, grosor en negrita, tamaño 20 y sombra.
   ///
   /// Parámetros preestablecidos:
@@ -136,6 +609,28 @@ class CustomTextStyle {
         color: Color(0x40000000),
         offset: Offset(0, 4), 
         blurRadius: 4, 
+      ),
+    ],
+  );
+
+  /// Estilo de texto con fuente "Poppins", color morado, grosor en negrita, tamaño 20 y sombra.
+  ///
+  /// Parámetros preestablecidos:
+  /// - `color`: Color morado, definido en la clase AppColors.
+  /// - `fontSize`: Tamaño de fuente de 20.
+  /// - `fontWeight`: Grosor de letra en negrita.
+  /// - `fontFamily`: Fuente de letra 'Poppins' (ttf añadidos previamente en la carpeta fonts).
+  /// - `sombras`: Sombra de color negro, desplazamiento de (0, 4) y radio de desenfoque de 4.
+  static const TextStyle purple3Bold20WithShadow = TextStyle(
+    color: AppColors.purple3,
+    fontSize: 20.0,
+    fontWeight: FontWeight.bold,
+    fontFamily: 'Poppins',
+    shadows: [
+      Shadow(
+        color: Color(0x40000000),
+        offset: Offset(0, 4),
+        blurRadius: 4,
       ),
     ],
   );
@@ -179,6 +674,28 @@ class CustomTextStyle {
       Shadow(
         color: Color(0x40000000), 
         offset: Offset(0, 4), 
+        blurRadius: 4,
+      ),
+    ],
+  );
+
+  /// Estilo de texto con fuente "Poppins", color blanco, grosor en semi-negrita, tamaño 20 y sombra.
+  ///
+  /// Parámetros preestablecidos:
+  /// - `color`: Color blanco, definido en la clase AppColors.
+  /// - `fontSize`: Tamaño de fuente de 20.
+  /// - `fontWeight`: Grosor de letra en semi-negrita.
+  /// - `fontFamily`: Fuente de letra 'Poppins' (ttf añadidos previamente en la carpeta fonts).
+  /// - `sombras`: Sombra de color negro, desplazamiento de (0, 4) y radio de desenfoque de 4.
+  static const TextStyle whiteSemiBold20WithShadow = TextStyle(
+    color: AppColors.white,
+    fontSize: 20.0,
+    fontWeight: FontWeight.w600,
+    fontFamily: 'Poppins',
+    shadows: [
+      Shadow(
+        color: Color(0x40000000),
+        offset: Offset(0, 4),
         blurRadius: 4,
       ),
     ],
@@ -294,6 +811,28 @@ class CustomTextStyle {
     ],
   );
 
+  /// Estilo de texto con fuente "Poppins", color blanco con opacidad al 50%, grosor en semi-negrita, tamaño 14 y sombra.
+  ///
+  /// Parámetros preestablecidos:
+  /// - `color`: Color blanco con opacidad al 50%, definido en la clase Colors.
+  /// - `fontSize`: Tamaño de fuente de 14.
+  /// - `fontWeight`: Grosor de letra en semi-negrita.
+  /// - `fontFamily`: Fuente de letra 'Poppins' (ttf añadidos previamente en la carpeta fonts).
+  /// - `sombras`: Sombra de color negro, desplazamiento de (0, 4) y radio de desenfoque de 4.
+  static TextStyle whiteOpacity50SemiBold14WithShadow = TextStyle(
+    color: Colors.white.withOpacity(0.50),
+    fontSize: 14.0,
+    fontWeight: FontWeight.w600,
+    fontFamily: 'Poppins',
+    shadows: const [
+      Shadow(
+        color: Color(0x40000000),
+        offset: Offset(0, 4),
+        blurRadius: 4,
+      ),
+    ],
+  );
+
   /// Estilo de texto con fuente "Poppins", color verde, grosor en negrita, tamaño 14 y sombra.
   ///
   /// Parámetros preestablecidos:
@@ -306,6 +845,28 @@ class CustomTextStyle {
     color: AppColors.green,
     fontSize: 14.0,
     fontWeight: FontWeight.bold,
+    fontFamily: 'Poppins',
+    shadows: [
+      Shadow(
+        color: Color(0x40000000),
+        offset: Offset(0, 4),
+        blurRadius: 4,
+      ),
+    ],
+  );
+
+  /// Estilo de texto con fuente "Poppins", color verde, grosor en negrita, tamaño 18 y sombra.
+  ///
+  /// Parámetros preestablecidos:
+  /// - `color`: Color verde, definido en la clase AppColors.
+  /// - `fontSize`: Tamaño de fuente de 18.
+  /// - `fontWeight`: Grosor de letra en negrita.
+  /// - `fontFamily`: Fuente de letra 'Poppins' (ttf añadidos previamente en la carpeta fonts).
+  /// - `sombras`: Sombra de color negro, desplazamiento de (0, 4) y radio de desenfoque de 4.
+  static const TextStyle greenBold18WithShadow = TextStyle(
+    color: AppColors.green,
+    fontSize: 18.0,
+    fontWeight: FontWeight.w600,
     fontFamily: 'Poppins',
     shadows: [
       Shadow(
@@ -377,6 +938,28 @@ class CustomTextStyle {
       Shadow(
         color: Color(0x40000000),
         offset: Offset(0, 4), 
+        blurRadius: 4,
+      ),
+    ],
+  );
+
+  /// Estilo de texto con fuente "Poppins", color blanco, grosor en semi-negrita, tamaño 18 y sombra.
+  ///
+  /// Parámetros preestablecidos:
+  /// - `color`: Color blanco, definido en la clase AppColors.
+  /// - `fontSize`: Tamaño de fuente de 18.
+  /// - `fontWeight`: Grosor de letra en semi-negrita.
+  /// - `fontFamily`: Fuente de letra 'Poppins' (ttf añadidos previamente en la carpeta fonts).
+  /// - `sombras`: Sombra de color negro, desplazamiento de (0, 4) y radio de desenfoque de 4.
+  static const TextStyle whiteSemiBold18WithShadow = TextStyle(
+    color: AppColors.white,
+    fontSize: 18.0,
+    fontWeight: FontWeight.w600,
+    fontFamily: 'Poppins',
+    shadows: [
+      Shadow(
+        color: Color(0x40000000),
+        offset: Offset(0, 4),
         blurRadius: 4,
       ),
     ],

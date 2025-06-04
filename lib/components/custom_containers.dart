@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:simple_shadow/simple_shadow.dart';
-
-import '../colors/app_colors.dart';
+import 'custom_text_style.dart';
 
 /// Clase que contiene diferentes elementos personalizados.
 ///
@@ -13,7 +13,7 @@ class CustomContainer{
   ///
   /// Este método construye un widget `AspectRatio` que contiene un `Stack` con un contenedor
   /// y una imagen centrada dentro de él.
-  Widget logoIcon() {
+  Widget logoIcon(BuildContext context) {
     return AspectRatio(
       aspectRatio: 1,
       child: Stack(
@@ -23,7 +23,7 @@ class CustomContainer{
             width: 200,
             height: 200,
             decoration: BoxDecoration(
-              color: AppColors.green,
+              color: Theme.of(context).colorScheme.primary,
               boxShadow: [
                 BoxShadow(
                   color: Colors.grey[850]!.withOpacity(0.50),
@@ -84,6 +84,52 @@ class CustomContainer{
       ),
     );
   }
+}
+
+Widget detailsScreenHeader(BuildContext context) {
+  final screenWidth = MediaQuery.of(context).size.width;
+  return Container(
+    color: Colors.transparent,
+    height: 90,
+    width: 150,
+    child: Stack(
+      children: [
+        Positioned(
+          bottom: 10,
+          left: screenWidth < 375 ? 5 : 30,
+          child: SimpleShadow(
+            opacity: 0.5,
+            color: Colors.black,
+            offset: const Offset(0, 4),
+            sigma: 3,
+            child: SvgPicture.asset(
+              'assets/svg/icon/BottomLeftCorner.svg',
+            ),
+          ),
+        ),
+        Center(
+          child: Text(
+            "Gestione y revise algunos\nparámetros de la aplicación",
+            style: CustomTextStyle.greenSemiBold20WithShadow,
+            textAlign: TextAlign.center,
+          ),
+        ),
+        Positioned(
+          top: 10,
+          right: screenWidth < 375 ? 5 : 30,
+          child: SimpleShadow(
+            opacity: 0.5,
+            color: Colors.black,
+            offset: const Offset(0, 4),
+            sigma: 3,
+            child: SvgPicture.asset(
+              'assets/svg/icon/TopRightCorner.svg',
+            ),
+          ),
+        ),
+      ],
+    ),
+  );
 }
 
 /// Clase que define un recorte personalizado para el contenedor que actua de fondo para el encabezado de cada pantalla.

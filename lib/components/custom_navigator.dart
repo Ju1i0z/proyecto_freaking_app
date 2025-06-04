@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../routes/app_routes.dart';
+import 'package:animations/animations.dart';
 
 /// Clase que define métodos personalizados para la navegación entre pantallas en la aplicación.
 ///
@@ -80,4 +81,66 @@ class CustomNavigator {
   static void instantNavigationPop(BuildContext context) {
     Navigator.of(context).pop();
   }
+
+  /// Método que navega a una nueva pantalla usando una transición de tipo SharedAxis.
+  ///
+  /// Parámetros:
+  /// - `context`: El contexto de construcción actual.
+  /// - `page`: El widget de la nueva pantalla a la que se va a navegar.
+  /// - `type`: El tipo de SharedAxisTransition (horizontal, vertical o scaled).
+  /// - `duration`: Duración de la animación.
+  static void sharedAxisNavigationPush({
+    required BuildContext context,
+    required Widget page,
+    SharedAxisTransitionType type = SharedAxisTransitionType.horizontal,
+    Duration duration = const Duration(milliseconds: 300),
+  }) {
+    Navigator.of(context).push(
+      PageRouteBuilder(
+        transitionDuration: duration,
+        reverseTransitionDuration: duration,
+        pageBuilder: (context, animation, secondaryAnimation) => page,
+        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+          return SharedAxisTransition(
+            animation: animation,
+            secondaryAnimation: secondaryAnimation,
+            transitionType: type,
+            child: child,
+          );
+        },
+      ),
+    );
+  }
+
+  /// Método que navega a una nueva pantalla usando una transición de tipo SharedAxis usando nombre de ruta:
+  ///
+  /// Parámetros:
+  /// - `context`: El contexto de construcción actual.
+  /// - `routeName`: El nombre de la ruta a la que se va a navegar.
+  /// - `type`: El tipo de SharedAxisTransition (horizontal, vertical o scaled).
+  /// - `duration`: Duración de la animación (opcional).
+  static void sharedAxisNavigationPushNamed({
+    required BuildContext context,
+    required String routeName,
+    SharedAxisTransitionType type = SharedAxisTransitionType.horizontal,
+    Duration duration = const Duration(milliseconds: 300),
+  }) {
+    Navigator.of(context).push(
+      PageRouteBuilder(
+        transitionDuration: duration,
+        reverseTransitionDuration: duration,
+        pageBuilder: (context, animation, secondaryAnimation) =>
+            AppRoutes.getRoutes()[routeName]!(context),
+        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+          return SharedAxisTransition(
+            animation: animation,
+            secondaryAnimation: secondaryAnimation,
+            transitionType: type,
+            child: child,
+          );
+        },
+      ),
+    );
+  }
+
 }

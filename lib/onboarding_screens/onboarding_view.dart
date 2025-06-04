@@ -126,7 +126,7 @@ class OnboardingView extends StatefulWidget {
         child: TextButton(
             onPressed: () async{
               final sharedPreferences = await SharedPreferences.getInstance();
-              sharedPreferences.setBool("onboarding_screens", true);
+              sharedPreferences.setBool("onboarding", true);
               if(!mounted)return;
               //Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> RegisterScreen()));
               CustomNavigator.instantNavigationPushNamedAndRemoveUntil(context, AppRoutes.registerScreen);

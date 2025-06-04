@@ -6,6 +6,8 @@ import 'package:freaking/screens/favorite_screen.dart';
 import 'package:freaking/screens/home_screen.dart';
 import 'package:freaking/screens/news_screen.dart';
 import 'package:freaking/screens/points_store_screen.dart';
+import 'package:animations/animations.dart';
+
 
 /// Clase controlador del BottomNavigationBar personalizado.
 ///
@@ -39,6 +41,26 @@ class _CustomBottomNavBarControllerState extends State<CustomBottomNavBarControl
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
+
+      // Imprime la pantalla seleccionada en la terminal
+      switch (index) {
+        case 0:
+          print("Pantalla \"Tienda de puntos (points_store_screen)\" seleccionada.");
+          break;
+        case 1:
+          print("Pantalla \"Novedades (news_screen)\" seleccionada.");
+          break;
+        case 2:
+          print("Pantalla de inicio \"FREAKING (home_screen)\" seleccionada.");
+          break;
+        case 3:
+          print("Pantalla \"Lista de deseos (favorite_screen)\" seleccionada.");
+          break;
+        case 4:
+          print("Pantalla \"Detalles (details_screen)\" seleccionada.");
+          break;
+      }
+
     });
   }
 
@@ -156,8 +178,18 @@ class _CustomBottomNavBarControllerState extends State<CustomBottomNavBarControl
             child: Stack(
               children: [
                 Center(
-                  child: _pages.elementAt(_selectedIndex),
+                  child: PageTransitionSwitcher(
+                    duration: const Duration(milliseconds: 300),
+                    transitionBuilder: (child, animation, secondaryAnimation) =>
+                        FadeThroughTransition(
+                          animation: animation,
+                          secondaryAnimation: secondaryAnimation,
+                          child: child,
+                        ),
+                    child: _pages.elementAt(_selectedIndex),
+                  ),
                 ),
+
                 Positioned(
                   left: 0,
                   right: 0,
